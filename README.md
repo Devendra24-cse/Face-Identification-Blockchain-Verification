@@ -1,32 +1,67 @@
-# HH Goa - Face Identification & Blockchain Verification
+# Face Identification & Blockchain Verification
 
-## Project
+A Python-based pipeline that combines face analysis, visual web search, social-media verification, evidence hashing, and blockchain-based fingerprint verification.
 
-A Python pipeline for the Hacker House Goa Task 3.
+## Overview
 
-The planned pipeline is:
+The system takes an input face image and processes it through multiple stages:
 
-Face Input
-→ Face Detection & Encoding
-→ Web/Social Media Search
-→ Matching Post
-→ Hash/Fingerprint
-→ Blockchain Upload
-→ Verification
+Input Image
+→ Face Detection
+→ Face Encoding
+→ Visual Web Search
+→ Candidate Image Matching
+→ Social-Media Verification
+→ Evidence Generation
+→ SHA-256 Fingerprint
+→ Ethereum Sepolia
+→ Blockchain Verification
 
-## Current Status
+The purpose of the blockchain component is to record a cryptographic fingerprint of the generated evidence and verify that the same fingerprint can be retrieved from the blockchain later.
 
-Phase 1 - Project setup
+## Features
 
-- Python environment configured
-- Basic dependencies installed
-- Project structure created
-- Environment variables configured
-- Git configured
+- Face detection using YuNet
+- Face encoding using SFace
+- Face similarity comparison
+- Google Lens visual search through SerpApi
+- Candidate image downloading
+- Candidate face matching and ranking
+- Social-media candidate verification
+- Evidence object generation
+- SHA-256 evidence fingerprinting
+- Ethereum Sepolia testnet recording
+- Blockchain fingerprint readback
+- Local vs blockchain fingerprint verification
 
 ## Project Structure
 
 ```text
-src/       Application source code
-input/     Input images
-results/   Generated results
+Face-Identification-Blockchain-Verification/
+│
+├── input/
+│   ├── test.jpg
+│   └── test_same.jpg
+│
+├── models/
+│   ├── sface/
+│   │   └── face_recognition_sface_2021dec.onnx
+│   └── yunet/
+│       └── face_detection_yunet_2026may.onnx
+│
+├── results/
+│
+├── src/
+│   ├── blockchain/
+│   ├── face/
+│   ├── search/
+│   ├── evidence_hasher.py
+│   └── main.py
+│
+├── tests/
+│   └── test_*.py
+│
+├── .env.example
+├── .gitignore
+├── requirements.txt
+└── README.md
