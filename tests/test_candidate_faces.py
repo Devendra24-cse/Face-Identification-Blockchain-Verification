@@ -2,9 +2,9 @@ from pathlib import Path
 
 import cv2
 
-from search.visual_search import VisualSearch
-from search.image_downloader import ImageDownloader
-from face.detector import FaceDetector
+from src.search.visual_search import VisualSearch
+from src.search.image_downloader import ImageDownloader
+from src.face.detector import FaceDetector
 
 
 # --------------------------------------------------

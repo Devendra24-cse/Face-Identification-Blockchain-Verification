@@ -1,12 +1,12 @@
 from pathlib import Path
 
-from face.detector import FaceDetector
-from face.encoder import FaceEncoder
-from face.comparator import FaceComparator
+from src.face.detector import FaceDetector
+from src.face.encoder import FaceEncoder
+from src.face.comparator import FaceComparator
 
-from search.visual_search import VisualSearch
-from search.image_downloader import ImageDownloader
-from search.candidate_matcher import CandidateMatcher
+from src.search.visual_search import VisualSearch
+from src.search.image_downloader import ImageDownloader
+from src.search.candidate_matcher import CandidateMatcher
 
 import cv2
 

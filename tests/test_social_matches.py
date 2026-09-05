@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from search.visual_search import VisualSearch
+from src.search.visual_search import VisualSearch
 
 
 project_root = Path(__file__).resolve().parent.parent

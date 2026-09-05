@@ -1,5 +1,5 @@
-from blockchain.connection import BlockchainConnection
-from blockchain.wallet import Wallet
+from src.blockchain.connection import BlockchainConnection
+from src.blockchain.wallet import Wallet
 
 
 class BlockchainTransaction:

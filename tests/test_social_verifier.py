@@ -2,14 +2,14 @@ from pathlib import Path
 
 import cv2
 
-from face.detector import FaceDetector
-from face.encoder import FaceEncoder
-from face.comparator import FaceComparator
+from src.face.detector import FaceDetector
+from src.face.encoder import FaceEncoder
+from src.face.comparator import FaceComparator
 
-from search.visual_search import VisualSearch
-from search.image_downloader import ImageDownloader
-from search.candidate_matcher import CandidateMatcher
-from search.social_verifier import SocialVerifier
+from src.search.visual_search import VisualSearch
+from src.search.image_downloader import ImageDownloader
+from src.search.candidate_matcher import CandidateMatcher
+from src.search.social_verifier import SocialVerifier
 
 
 project_root = Path(__file__).resolve().parent.parent

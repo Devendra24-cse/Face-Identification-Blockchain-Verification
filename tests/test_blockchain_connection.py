@@ -1,4 +1,4 @@
-from blockchain.connection import BlockchainConnection
+from src.blockchain.connection import BlockchainConnection
 
 
 print("Connecting to Sepolia...")

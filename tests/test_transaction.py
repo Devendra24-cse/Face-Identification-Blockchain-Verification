@@ -1,4 +1,4 @@
-from blockchain.transaction import BlockchainTransaction
+from src.blockchain.transaction import BlockchainTransaction
 
 
 print("Creating blockchain transaction...")

@@ -1,4 +1,4 @@
-from evidence_hasher import EvidenceHasher
+from src.evidence_hasher import EvidenceHasher
 
 
 hasher = EvidenceHasher()

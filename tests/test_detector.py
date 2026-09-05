@@ -1,7 +1,7 @@
 from pathlib import Path
 import cv2
 
-from face.detector import FaceDetector
+from src.face.detector import FaceDetector
 
 
 # Find project root

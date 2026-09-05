@@ -1,5 +1,6 @@
 from src.blockchain.connection import BlockchainConnection
 from src.blockchain.wallet import Wallet
+from web3.exceptions import TimeExhausted
 
 
 class BlockchainRecorder:
@@ -54,11 +55,40 @@ class BlockchainRecorder:
             signed_transaction.raw_transaction
         )
 
-        receipt = (
-            self.web3.eth.wait_for_transaction_receipt(
+        try:
+            receipt = (
+                self.web3.eth.wait_for_transaction_receipt(
+                    tx_hash,
+                    timeout=120
+                )
+            )
+
+        except TimeExhausted:
+
+            print(
+                "\nTransaction confirmation timed out."
+            )
+
+            print(
+                "Checking transaction status..."
+            )
+
+            transaction = self.web3.eth.get_transaction(
                 tx_hash
             )
-        )
+
+            if transaction["blockNumber"] is None:
+
+                raise RuntimeError(
+                    "Transaction was submitted but "
+                    "has not been mined yet."
+                )
+
+            receipt = (
+                self.web3.eth.get_transaction_receipt(
+                    tx_hash
+                )
+            )
 
         return {
             "transaction_hash": tx_hash.hex(),
